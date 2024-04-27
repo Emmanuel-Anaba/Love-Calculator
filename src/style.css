@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  * {
+    @apply outline-0;
+  }
+  .myContainer {
+    @apply lg:w-[70%] m-auto;
+  }
+  input {
+    @apply border-[1px] w-[100%] block px-3 py-1 rounded;
+  }
+}
