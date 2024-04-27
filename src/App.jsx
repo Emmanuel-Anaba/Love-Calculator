@@ -7,8 +7,8 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let a = [...name1];
-    let b = [...name2];
+    let a = [...name1.toLowerCase()];
+    let b = [...name2.toLowerCase()];
     a.forEach((i) => {
       if (b.includes(i)) {
         a = a.filter((char) => char !== i);
