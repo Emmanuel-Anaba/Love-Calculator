@@ -7,21 +7,21 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let a = [...name1.toLowerCase()].filter((n) => n !== " ");
-    let b = [...name2.toLowerCase()].filter((n) => n !== " ");
+    let a = [...name1.toLowerCase().replaceAll(" ","")];
+    let b = [...name2.toLowerCase().replaceAll(" ","")];
     a.forEach((i) => {
       if (b.includes(i)) {
         a = a.filter((n) => n !== i);
         b = b.filter((n) => n !== i);
       }
     });
-    let score = ((a.concat(b).length % 10) / 10) * 100;
+    const score = ((a.concat(b).length % 10) / 10) * 100;
     display(name1, name2, score);
   };
 
   const display = (a, b, score) => {
     alert(
-      `The percentage of ${a} and ${b}'s love is ${score} ${
+      `The percentage of ${a} and ${b}'s love is ${score}% ${
         score < 70 ? "🤐" : "😍"
       }`
     );
