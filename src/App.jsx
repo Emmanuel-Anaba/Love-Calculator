@@ -1,5 +1,7 @@
 /* eslint-disable no-undef */
 import { useState } from "react";
+import vid1 from "./video.mp4"
+import vid2 from "./video.mp4"
 
 const App = () => {
   const [name1, setName1] = useState("");
@@ -7,10 +9,10 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let a = name1.replaceAll(" ", "");
-    let b = name1.replaceAll(" ", "");
-    a = [...a.toLowerCase()];
-    b = [...b.toLowerCase()];
+    const x = name1.replaceAll(" ", "");
+    const y = name2.replaceAll(" ", "");
+    let a = [...x.toLowerCase()];
+    let b = [...y.toLowerCase()];
     a.forEach((i) => {
       if (b.includes(i)) {
         a = a.filter((n) => n !== i);
@@ -18,7 +20,7 @@ const App = () => {
       }
     });
     const score = ((a.concat(b).length % 10) / 10) * 100;
-    display(a, b, score);
+    display(x, y, score);
   };
 
   const display = (a, b, score) => {
@@ -33,14 +35,20 @@ const App = () => {
 
   return (
     <>
-      <div className="myContainer h-[100svh] grid grid-rows-6">
-        <div className="row-span-1 grid place-items-center">
-          <h1 className="text-center text-2xl md:text-4xl font-medium">
+      <video
+        autoPlay
+        muted
+        loop
+        className="absolute -z-10 w-full h-full object-cover opacity-70">
+        <source src={vid1} type="video/mp4" />
+        <source src={vid2} type="video/webm" />
+      </video>
+      <div className="myContainer h-[100svh] grid grid-rows-4 font-medium">
+          <h1 className="m-auto text-center text-red-600 text-2xl md:text-4xl">
             Love Calculator
           </h1>
-        </div>
         <form
-          className="grid place-items-center row-span-4"
+          className="grid place-items-center row-span-3"
           onSubmit={handleSubmit}>
           <div className="w-[90%] grid md:grid-flow-col gap-3">
             <input

@@ -10,6 +10,6 @@
     @apply lg:w-[70%] m-auto;
   }
   input {
-    @apply border-[1px] w-[100%] block px-3 py-1 rounded;
+    @apply border-2 w-[100%] block px-3 py-1 rounded bg-transparent border-red-600 text-red-600 placeholder:text-red-600;
   }
 }
