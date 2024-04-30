@@ -7,12 +7,12 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let a = [...name1.toLowerCase()];
-    let b = [...name2.toLowerCase()];
+    let a = [...name1.toLowerCase()].filter((n) => n !== " ");
+    let b = [...name2.toLowerCase()].filter((n) => n !== " ");
     a.forEach((i) => {
       if (b.includes(i)) {
-        a = a.filter((char) => char !== i);
-        b = b.filter((char) => char !== i);
+        a = a.filter((n) => n !== i);
+        b = b.filter((n) => n !== i);
       }
     });
     let score = ((a.concat(b).length % 10) / 10) * 100;
@@ -68,4 +68,4 @@ const App = () => {
 };
 
 export default App;
-// I want to add background image
+// I want to add background video: A short continuous looping video of love
