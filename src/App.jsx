@@ -7,8 +7,10 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let a = [...name1.toLowerCase().replaceAll(" ","")];
-    let b = [...name2.toLowerCase().replaceAll(" ","")];
+    let a = name1.replaceAll(" ", "");
+    let b = name1.replaceAll(" ", "");
+    a = [...a.toLowerCase()];
+    b = [...b.toLowerCase()];
     a.forEach((i) => {
       if (b.includes(i)) {
         a = a.filter((n) => n !== i);
@@ -16,7 +18,7 @@ const App = () => {
       }
     });
     const score = ((a.concat(b).length % 10) / 10) * 100;
-    display(name1, name2, score);
+    display(a, b, score);
   };
 
   const display = (a, b, score) => {
