@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import { useState } from "react";
-import vid1 from "./video.mp4"
-import vid2 from "./video.mp4"
+import vid from "./video.mp4";
 
 const App = () => {
   const [name1, setName1] = useState("");
@@ -39,14 +38,12 @@ const App = () => {
         autoPlay
         muted
         loop
-        className="absolute -z-10 w-full h-full object-cover opacity-70">
-        <source src={vid1} type="video/mp4" />
-        <source src={vid2} type="video/webm" />
-      </video>
+        className="absolute -z-10 w-full h-full object-cover opacity-70"
+        src={vid}></video>
       <div className="myContainer h-[100svh] grid grid-rows-4 font-medium">
-          <h1 className="m-auto text-center text-red-600 text-2xl md:text-4xl">
-            Love Calculator
-          </h1>
+        <h1 className="m-auto text-center text-red-600 text-2xl md:text-4xl">
+          Love Calculator
+        </h1>
         <form
           className="grid place-items-center row-span-3"
           onSubmit={handleSubmit}>
